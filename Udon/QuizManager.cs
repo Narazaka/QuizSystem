@@ -77,6 +77,7 @@ namespace Narazaka.VRChat.QuizSystem
             incorrectAnswerCount = 0;
             finishNotified = false;
             UpdateView();
+            Notify(nameof(QuizStateListener._OnQuizStarted));
         }
 
         [PublicAPI]
@@ -177,9 +178,20 @@ namespace Narazaka.VRChat.QuizSystem
                 {
                     if (listener != null)
                     {
-                        listener.SendCustomEvent(nameof(QuizResultListener._OnQuizFinished));
-                        listener.SendCustomEvent(IsSuccess ? nameof(QuizResultListener._OnQuizSuccess) : nameof(QuizResultListener._OnQuizFailure));
+                        listener.SendCustomEvent(nameof(QuizStateListener._OnQuizFinished));
+                        listener.SendCustomEvent(IsSuccess ? nameof(QuizStateListener._OnQuizSuccess) : nameof(QuizStateListener._OnQuizFailure));
                     }
+                }
+            }
+        }
+
+        void Notify(string eventName)
+        {
+            foreach (var listener in listeners)
+            {
+                if (listener != null)
+                {
+                    listener.SendCustomEvent(eventName);
                 }
             }
         }
