@@ -18,6 +18,14 @@ https://github.com/Narazaka/QuizSystem/releases/latest から `net.narazaka.vrch
 
 `QuizSystem` プレハブを配置して設定する
 
+## Changelog
+
+- 0.2.0:
+  - `_OnQuizStarted` イベントを追加
+  - SetActiveByQuizState ユーティリティを追加
+  - QuizSystemのプレハブにデフォルトでSetActiveByQuizStateを設定
+- 0.1.0: リリース
+
 ## License
 
 [Zlib License](LICENSE.txt)
