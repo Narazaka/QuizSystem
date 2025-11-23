@@ -20,6 +20,7 @@ https://github.com/Narazaka/QuizSystem/releases/latest から `net.narazaka.vrch
 
 ## Changelog
 
+- 0.2.2: UIパフォーマンス改善
 - 0.2.1: changelogUrlを追加
 - 0.2.0:
   - `_OnQuizStarted` イベントを追加
